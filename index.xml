@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Even - A super concise theme for Hugo</title>
+    <title>Bruce的hugo站</title>
     <link>http://localhost:8250/</link>
-    <description>Recent content on Even - A super concise theme for Hugo</description>
+    <description>Recent content on Bruce的hugo站</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Sun, 20 Aug 2017 21:38:52 +0800</lastBuildDate>
