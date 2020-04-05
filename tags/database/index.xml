@@ -1,24 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Bruce的hugo站</title>
-    <link>http://localhost:8250/</link>
-    <description>Recent content on Bruce的hugo站</description>
+    <title>Database on Bruce的hugo站</title>
+    <link>http://localhost:8250/tags/database/</link>
+    <description>Recent content in Database on Bruce的hugo站</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 20 Aug 2017 21:38:52 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 05 Apr 2020 15:38:22 +0800</lastBuildDate>
     
-	<atom:link href="http://localhost:8250/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://localhost:8250/tags/database/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>About</title>
-      <link>http://localhost:8250/about/</link>
-      <pubDate>Sun, 20 Aug 2017 21:38:52 +0800</pubDate>
-      
-      <guid>http://localhost:8250/about/</guid>
-      <description></description>
-    </item>
     
     <item>
       <title>MongoDB入门</title>
