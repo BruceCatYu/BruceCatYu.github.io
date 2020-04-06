@@ -9,6 +9,48 @@
   </url>
   
   <url>
+    <loc>http://localhost:8250/post/</loc>
+    <lastmod>2020-04-06T20:56:29+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:8250/tags/</loc>
+    <lastmod>2020-04-06T20:56:29+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:8250/tags/%E4%B8%AD%E6%96%87/</loc>
+    <lastmod>2020-04-06T20:56:29+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:8250/tags/%E5%85%A5%E9%97%A8/</loc>
+    <lastmod>2020-04-06T20:56:29+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:8250/tags/%E6%9C%AA%E5%AE%8C%E7%BB%93/</loc>
+    <lastmod>2020-04-06T20:56:29+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:8250/post/regex/</loc>
+    <lastmod>2020-04-06T20:56:29+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>http://localhost:8250/tags/database/</loc>
     <lastmod>2020-04-05T15:38:22+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -17,27 +59,6 @@
   
   <url>
     <loc>http://localhost:8250/post/mongodb%E5%85%A5%E9%97%A8/</loc>
-    <lastmod>2020-04-05T15:38:22+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:8250/post/</loc>
-    <lastmod>2020-04-05T15:38:22+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:8250/tags/</loc>
-    <lastmod>2020-04-05T15:38:22+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:8250/tags/%E4%B8%AD%E6%96%87/</loc>
     <lastmod>2020-04-05T15:38:22+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>

@@ -21,6 +21,15 @@
     </item>
     
     <item>
+      <title>正则表达式快速上手</title>
+      <link>http://localhost:8250/post/regex/</link>
+      <pubDate>Mon, 06 Apr 2020 20:56:29 +0800</pubDate>
+      
+      <guid>http://localhost:8250/post/regex/</guid>
+      <description>基本规则 \d 匹配一个数字字符。等价于[0-9] \D 匹配一个非数字字符。等价于[^0-9] \w 匹配包括下划线的任何单词数字字符。等价于 [A-Za-z0-9_] \W 匹配任何非</description>
+    </item>
+    
+    <item>
       <title>MongoDB入门</title>
       <link>http://localhost:8250/post/mongodb%E5%85%A5%E9%97%A8/</link>
       <pubDate>Sun, 05 Apr 2020 15:38:22 +0800</pubDate>
