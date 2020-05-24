@@ -26,7 +26,7 @@
       <pubDate>Sun, 05 Apr 2020 15:38:22 +0800</pubDate>
       
       <guid>http://localhost:8250/post/mongodb%E5%85%A5%E9%97%A8/</guid>
-      <description>概念 MongoDB官网 属于nosql 上手快 相对与sql的table，MongoDB采用了collection document相对于sql的r</description>
+      <description>概念 MongoDB官网 属于nosql 上手快 相对与RDBMS的table，MongoDB采用了collection document相对于RDB</description>
     </item>
     
   </channel>
