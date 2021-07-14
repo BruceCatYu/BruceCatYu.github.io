@@ -9,7 +9,7 @@ GitHubRepositories: Hexo-LiveForCode
 # 博主名称, 文章后缀和主页图片上都会使用此名称
 BlogUser: Bruce Yu
 # 用户头像URL
-BlogAvatar: https://cdn.jsdelivr.net/gh/first19326/hexo-liveforcode@master/static/image/sidebar/avatar.jpg
+BlogAvatar: https://avatars.githubusercontent.com/u/30469703?s=400&u=d65c3437fca5e37eebaaf0e70d0183607f1c6044&v=4
 # 创建时间
 BlogStartDate: "2020-01-01"
 
@@ -147,9 +147,6 @@ MenuList:
     name: 归档
     href: /archive
   -
-    name: 赞赏
-    href: /donate
-  -
     name: 关于
     href: /about
   -
@@ -190,11 +187,11 @@ BottomText:
   # 图标  
   icon: like-fill
   # 图标左侧文字
-  left: 人生若只如初见
+  left: 苟利国家生死以
   # 图标右侧文字
-  right: 何事秋风悲画扇  
+  right: 岂因祸福避趋之
 # 是否显示主题信息
-ThemeInfo: true 
+ThemeInfo: false 
 
 
 # ---- 控制台输出 ----
@@ -212,14 +209,6 @@ ConsoleList:
 
 # ---- 字体图标扩展 ----
 FontIconExtend: ""
-
-
-# ---- 赞赏配置 ----
-Donate: 
-  paypal : ""
-  bitcoin: ""
-  alipay : https://cdn.jsdelivr.net/gh/first19326/hexo-liveforcode@master/static/image/donate/alipay.png
-  wechat : https://cdn.jsdelivr.net/gh/first19326/hexo-liveforcode@master/static/image/donate/wechat.png
 
 
 # ---- Code Style ----
@@ -246,7 +235,7 @@ Valine:
   el: .comments-content
   appId: srhKtvWPQTWYKh3qX8G8M7v0-gzGzoHsz
   appKey: 8uVSP1q6UlALVC5igYfIfv2h
-  placeholder: 你是我一生只会遇见一次的惊喜...
+  placeholder: Talk is cheap,show me your code
   avatar: mm
   meta: nick,mail,link
   requiredFields: nick,mail
@@ -340,7 +329,7 @@ Font:
 
 # ---- 文章尾缀配置 ----
 Suffix: 
-  about: 简单地活着, 肆意又精彩.
+  about: Too young too simple.Sometimes naive
 
 
 # ---- 主题信息配置 ----
