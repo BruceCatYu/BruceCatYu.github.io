@@ -104,5 +104,5 @@ theme: LiveForCode
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: git
-  repo: https://gh_token@github.com/2432001677/2432001677.github.io.git
-  branch: master
+  repo: https://github.com/2432001677/2432001677.github.io.git
+  branch: gh-pages
