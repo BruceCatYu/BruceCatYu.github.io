@@ -83,5 +83,3 @@ $结束位置
 ## JavaScript  
 
 ---
-
-## Python  
