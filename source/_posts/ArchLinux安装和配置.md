@@ -13,7 +13,7 @@ draft: false
 
 ## 2. 硬盘分区  
 开始菜单右键->磁盘管理, 为Linux分出一块空闲的区域  
-![分区图](images/windows_partion.png)  
+![分区图](../../../../images/windows_partion.png)  
 注意EFI分区大小要在300MB左右  
 
 ## 3. 设置BIOS  
