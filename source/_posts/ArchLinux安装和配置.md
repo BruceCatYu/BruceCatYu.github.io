@@ -74,11 +74,11 @@ mount /dev/nvme0n1p1 /mnt/boot
 ```
 
 ## 6. 安装系统  
-安装基础的包
+安装内核和基础的包
 ```zsh
 pacstrap /mnt base linux linux-firmware vim
 ```
-生产fstab
+生成[fstab](https://wiki.archlinux.org/title/fstab)  
 ```zsh
 genfstab -U /mnt >> /mnt/etc/fstab
 ```
@@ -93,13 +93,13 @@ cat /mnt/etc/fstab
 arch-chroot /mnt
 ```
 ### 2. [建立swapfile或挂载swap分区](https://wiki.archlinux.org/title/Swap)(可以先跳过，进入新系统后再配置)  
-### 3. 设置[时区](https://wiki.archlinux.org/title/Locale) 
+### 3. 设置时区  
 ```zsh
 timedatectl set-timezone Asia/Shanghai
 #同步硬件时钟
 hwclock --systohc
 ```
-设置locale  
+### 4. 设置[locale](https://wiki.archlinux.org/title/Locale)  
 ```zsh
 vim /etc/locale.gen
 #输入/en_US后回车, 找到UTF-8那一行 删掉前面的#
@@ -115,14 +115,195 @@ vim /etc/locale.conf
 LANG=en_US.UTF-8
 ```
 
-### 4. hostname
+### 5. hostname  
 ```zsh
 vim /etc/hostname
 ```
-自己取个主机名
+自己取个主机名,比如arch  
+```zsh
+arch
+```
+
+### 6. hosts
+```zsh
+vim /etc/hosts
+```
+写入以下内容,比如主机名为arch  
+```zsh
+127.0.0.1 localhost
+::1 localhost
+127.0.0.1 arch.localdomain  arch
+```
+
+### 7. 设置root密码  
+```zsh
+passwd
+```
+
+### 8. 安装启动器  
+```zsh
+pacman -S grub efibootmgr networkmanager network-manager-applet dialog wireless_tools wpa_supplicant os-prober mtools dosfstools ntfs-3g base-devel linux-headers reflector git sudo
+```
+### 9. 安装微码文件
+如果CPU牌子是Intel  
+```zsh
+pacman -S intel-ucode
+```
+如果CPU牌子是AMD  
+```zsh
+pacman -S amd-ucode
+```
+
+### 10. 配置grub  
+```zsh
+vim /etc/default/grub
+```
+添加下面这行  
+```zsh
+GRUB_DISABLE_OS_PROBER=false
+```
+完成之后输入  
+```zsh
+grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=Arch
+#生成grub.cfg
+grub-mkconfig -o /boot/grub/grub.cfg
+```
+
+## 7. 退出新系统并取消挂载
+```zsh
+exit
+umount -a
+reboot
+```
+在下次启动前拔掉U盘  
+
+## 8.进入系统  
+### 1. 联网  
+```zsh
+systemctl enable --now NetworkManager
+nmtui
+```
+### 2. 新建用户  
+比如新建一个叫mir的用户  
+```zsh
+useradd -m -G wheel mir
+passwd mir
+EDITOR=vim visudo
+#输入/wheel 找到#wheel ALL=(ALL) ALL这一行,删去#
+```
+### 3. 显卡驱动  
+AMD集显驱动  
+```zsh
+pacman -S xf86-video-amdgpu
+```
+NVIDIA独显驱动  
+```zsh
+pacman -S nvidia nvidia-utils
+```
+###  4. Display Server  
+```zsh
+pacman -S xorg
+```
+### 5. 安装[Display Manager](https://wiki.archlinux.org/title/display_manager)  
+Gnome:
+```zsh
+pacman -S gdm
+```
+KDE:
+```zsh
+pacman -S sddm
+```
+Xfce||DDE:
+```zsh
+pacman -S lightdm lightdm-gtk-greeter
+```
+设置开机自动启动，以gdm为例：
+```zsh
+systemctl enable gdm
+```
+### 6. 安装[Desktop Environment](https://wiki.archlinux.org/title/Desktop_environment)  
+Gnome:
+```zsh
+pacman -S gnome
+#gnome全家桶(可选)
+pacman -S gnome-extra
+```
+KDE:
+```zsh
+pacman -S plasma kde-applications packagekit-qt5
+```
+Xfce:
+```zsh
+pacman -S xfce4 xfce4-goodies
+```
+DDE:
+```zsh
+pacman -S deepin deepin-extra
+```
+### 7. 中文字体  
+```zsh
+pacman -S ttf-sarasa-gothic
+```
+再次重启后就可以见到登陆界面  
+
+# 选择性折腾
+## 1. 双显卡切换  
+方案: [optimus-manager](https://github.com/Askannz/optimus-manager)
+## 2. [AUR](https://wiki.archlinux.org/title/Arch_User_Repository)  
+安装[yay](https://github.com/Jguer/yay)  
+```zsh
+pacman -S --needed git base-devel
+git clone https://aur.archlinux.org/yay.git
+cd yay
+makepkg -si
+```
+## 3. zsh
+```zsh
+pacman -S zsh
+chsh -s /usr/bin/zsh
+```
+安装[ohmyzsh](https://github.com/ohmyzsh/ohmyzsh)  
+
+## 4. 拼音输入法   
+安装fcitx5  
+```zsh
+yay -S fcitx5-im
+vim ~/.pam_environment
+```
+内容为:  
+```zsh
+GTK_IM_MODULE DEFAULT=fcitx
+QT_IM_MODULE  DEFAULT=fcitx
+XMODIFIERS    DEFAULT=\@im=fcitx
+SDL_IM_MODULE DEFAULT=fcitx
+```
+```zsh
+yay -S fcitx5-rime
+yay -S rime-cloverpinyin
+vim ~/.local/share/fcitx5/rime/default.custom.yaml
+```
+内容为:  
+```yaml
+patch:
+  "menu/page_size": 5
+  schema_list:
+    - schema: clover
+```
+安装中文维基百科词库:  
+```zsh
+yay -S fcitx5-pinyin-zhwiki-rime
+```
+配置主题:  
+```zsh
+yay -S fcitx5-material-color
+```
+完成后注销,打开fcitx5-configtool把rime输入法按喜好配置一番  
+
+------
+# 可能遇到的问题  
+* https://github.com/2432001677/2432001677.github.io/issues/9
 
 ## Reference  
 * [Installation guide](https://wiki.archlinux.org/title/Installation_guide)  
 * [2021 Archlinux双系统安装教程（超详细）](https://zhuanlan.zhihu.com/p/138951848)  
 * [Manjaro-KDE安装配置全攻略](https://zhuanlan.zhihu.com/p/114296129)  
-* [fstab](https://wiki.archlinux.org/title/fstab)
