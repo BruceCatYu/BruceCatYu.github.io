@@ -1,5 +1,5 @@
 ---
-title: "Arch Linux安装&配置"
+title: "Arch Linux安装&配置(2021)"
 tags: ["中文","入门","配置","未完结","Linux","Arch Linux"]
 date: 2021-08-31T10:56:29+08:00
 draft: false  
