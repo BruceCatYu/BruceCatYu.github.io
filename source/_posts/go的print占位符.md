@@ -1,5 +1,5 @@
 ---
-title: "format verbs in golang's printf"
+title: "Format verbs in golang's printf"
 tags: ["English","入门","语法","已完结","go","printf"]
 date: 2021-09-04T23:35:29+08:00
 draft: false  
