@@ -1,6 +1,6 @@
 ---
 title: "MongoDB入门"
-tag: ["Database", "中文","入门","未完结"]
+tag: ["Database", "中文","入门","未完结","MongoDB"]
 date: 2020-04-05T15:38:22+08:00
 draft: false
 ---
