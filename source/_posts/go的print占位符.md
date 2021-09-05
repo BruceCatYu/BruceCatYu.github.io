@@ -75,3 +75,4 @@ func main() {
 # References
 [go dev](https://pkg.go.dev/fmt#pkg-overview)
 [go by example](https://gobyexample.com/string-formatting)
+[Using '%q' inside fmt.Printf in Go (instead of '%s')](https://dev.to/mcaci/using-q-inside-fmt-printf-in-go-2i23)
