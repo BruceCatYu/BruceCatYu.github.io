@@ -75,9 +75,11 @@ main context deadline exceeded
 | 名称 | 类型 | 概述 |
 | - | - | - |
 | Context | 公共接口 | context的核心,为事件定义了四个方法 |
-| cancelCtx | 私有结构体 | 实现Context接口 |
 | deadlineExceededError | 私有结构体 | 实现Error接口,用于表示上下文已到达deadline |
 | emptyCtx | 类型别名 | int的别名,同时实现了Context接口 |
+| canceler | 公共接口 | 定义了取消和完成方法 |
+| cancelCtx | 私有结构体 | 实现canceler接口，内嵌了Context |
+| timerCtx | 私有结构体 | 组合了cancelCtx |
 | CancelFunc | 类型别名 | 无參无返回值的函数别名,用于取消上下文 |
 | propagateCancel | 函数 | 用于传递取消信号 |
 
@@ -94,7 +96,7 @@ main context deadline exceeded
 
 ------
 
-## 四大函数  
+## 四大With函数  
 
 ### WithCancel  
 `WithCancel returns a copy of parent with a new Done channel. The returned context's Done channel is closed when the returned cancel function is called or when the parent context's Done channel is closed, whichever happens first.`  
