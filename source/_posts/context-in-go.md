@@ -78,7 +78,7 @@ main context deadline exceeded
 | deadlineExceededError | 私有结构体 | 实现Error接口,用于表示上下文已到达deadline |
 | emptyCtx | 类型别名 | int的别名,同时实现了Context接口 |
 | canceler | 公共接口 | 定义了取消和完成方法 |
-| cancelCtx | 私有结构体 | 实现canceler接口，内嵌了Context |
+| cancelCtx | 私有结构体 | 实现canceler接口，组合了Context匿名接口 |
 | timerCtx | 私有结构体 | 组合了cancelCtx |
 | CancelFunc | 类型别名 | 无參无返回值的函数别名,用于取消上下文 |
 | propagateCancel | 函数 | 用于传递取消信号 |
@@ -92,7 +92,52 @@ main context deadline exceeded
 | todo | 私有变量 | 与`background`完全一致,只有名称上的差别 |
 
 ### Context接口
+```go
+type emptyCtx int
 
+func (*emptyCtx) Deadline() (deadline time.Time, ok bool) {
+	return
+}
+
+func (*emptyCtx) Done() <-chan struct{} {
+	return nil
+}
+
+func (*emptyCtx) Err() error {
+	return nil
+}
+
+func (*emptyCtx) Value(key interface{}) interface{} {
+	return nil
+}
+
+func (e *emptyCtx) String() string {
+	switch e {
+	case background:
+		return "context.Background"
+	case todo:
+		return "context.TODO"
+	}
+	return "unknown empty Context"
+}
+```
+emptyCtx没有值, 没有deadline, 只是用来当一个唯一的地址  
+
+```go
+var (
+	background = new(emptyCtx)
+	todo       = new(emptyCtx)
+)
+
+func Background() Context {
+	return background
+}
+
+func TODO() Context {
+	return todo
+}
+```
+由此可见Background()和TODO()其实都是一个空的、非nil的Context
 
 ------
 
@@ -110,26 +155,6 @@ func WithCancel(parent Context) (ctx Context, cancel CancelFunc) {
 	c := newCancelCtx(parent)
 	propagateCancel(parent, &c)
 	return &c, func() { c.cancel(true, Canceled) }
-}
-
-```
-
-
-### WithTimeout  
-`WithTimeout returns WithDeadline(parent, time.Now().Add(timeout)).`  
-`Canceling this context releases resources associated with it, so code should call cancel as soon as the operations running in this Context complete:`  
-
-```go
-func slowOperationWithTimeout(ctx context.Context) (Result, error) {
-  ctx, cancel := context.WithTimeout(ctx, 100*time.Millisecond)
- 	defer cancel()  // releases resources if slowOperation completes before timeout elapses
- 	return slowOperation(ctx)
-}
-```  
-
-```go
-func WithTimeout(parent Context, timeout time.Duration) (Context, CancelFunc) {
-	return WithDeadline(parent, time.Now().Add(timeout))
 }
 
 ```
@@ -170,6 +195,16 @@ func WithDeadline(parent Context, d time.Time) (Context, CancelFunc) {
 
 ```
 
+### WithTimeout  
+`WithTimeout returns WithDeadline(parent, time.Now().Add(timeout)).`  
+`Canceling this context releases resources associated with it, so code should call cancel as soon as the operations running in this Context complete:`  
+
+```go
+func WithTimeout(parent Context, timeout time.Duration) (Context, CancelFunc) {
+	return WithDeadline(parent, time.Now().Add(timeout))
+}
+
+```
 
 ### WithValue  
 `WithValue returns a copy of parent in which the value associated with key is val.`  
