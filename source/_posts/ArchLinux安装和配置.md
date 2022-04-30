@@ -60,6 +60,8 @@ lsblk
 ```zsh
 #假设新分区为nvme0n1p5
 mkfs.ext4 /dev/nvme0n1p5
+#如果是双系统,EFI分区已存在,则跳过下面的格式化EFI
+mkfs.fat -F 32 /dev/nvme0n1p1
 ```
 ### 4. 挂载分区  
 将分区挂载到/mnt目录
