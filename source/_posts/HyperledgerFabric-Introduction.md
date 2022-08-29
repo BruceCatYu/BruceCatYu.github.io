@@ -2,7 +2,6 @@
 title: "Hyperledger Fabric简介"
 tags: ["中文","入门","概念","已完结","blockchain","Hyperledger Fabric"]
 date: 2022-06-21T15:10:29+08:00
-draft: false  
 ---
 
 # Hyperledger Fabric
