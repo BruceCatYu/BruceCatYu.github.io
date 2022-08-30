@@ -633,7 +633,8 @@ subtitle:
   # subtitle 會先顯示 source , 再顯示 sub 的內容
   source: false
   # 如果關閉打字效果，subtitle 只會顯示 sub 的第一行文字
-  sub: Too young
+  sub:
+    - TOO YOUNG TOO SIMPLE, SOMETIMES NAIVE!
 
 # Loading Animation (加載動畫)
 preloader: true
