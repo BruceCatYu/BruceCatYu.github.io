@@ -319,7 +319,7 @@ waline:
 # utterances
 # https://utteranc.es/
 utterances:
-  repo: 2432001677.github.io
+  repo: 2432001677/2432001677.github.io
   # Issue Mapping: pathname/url/title/og:title
   issue_term: pathname
   # Theme: github-light/github-dark/github-dark-orange/icy-dark/dark-blue/photon-dark
