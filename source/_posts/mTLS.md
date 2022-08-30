@@ -1,6 +1,9 @@
 ---
 title: "Mutual TLS"
-tags: ["English","未完结","网络","mTLS"]
+tags: ["English","mTLS"]
+categories: ["网络","入门"]
+cover: https://random.imagecdn.app/376/252
+top_img: https://random.imagecdn.app/1920/400
 date: 2022-06-08T11:36:29+08:00
 ---
 

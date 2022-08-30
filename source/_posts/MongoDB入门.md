@@ -1,6 +1,9 @@
 ---
 title: "MongoDB入门"
-tag: ["Database", "中文","入门","未完结","MongoDB"]
+tag: ["中文","MongoDB"]
+categories: ["Database","入门"]
+cover: https://random.imagecdn.app/376/252
+top_img: https://random.imagecdn.app/1920/400
 date: 2020-04-05T15:38:22+08:00
 ---
 

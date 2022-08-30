@@ -1,6 +1,9 @@
 ---
 title: "Arch Linux安装&配置(2021)"
-tags: ["中文","入门","配置","未完结","Linux","Arch Linux"]
+tags: ["中文","配置","Arch Linux"]
+categories: ["Linux","入门"]
+cover: https://random.imagecdn.app/376/252
+top_img: https://random.imagecdn.app/1920/400
 date: 2021-08-31T10:56:29+08:00
 ---
 

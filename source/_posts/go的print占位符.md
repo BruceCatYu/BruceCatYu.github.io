@@ -1,6 +1,9 @@
 ---
 title: "Format verbs in golang's printf"
-tags: ["English","入门","语法","已完结","go","printf"]
+tags: ["English","语法","go","printf"]
+categories: ["golang","入门"]
+cover: https://random.imagecdn.app/376/252
+top_img: https://random.imagecdn.app/1920/400
 date: 2021-09-04T23:35:29+08:00
 ---
 

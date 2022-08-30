@@ -1,6 +1,9 @@
 ---
 title: "Hyperledger Fabric简介"
-tags: ["中文","入门","概念","已完结","blockchain","Hyperledger Fabric"]
+tags: ["中文","Hyperledger Fabric"]
+categories: ["blockchain","入门"]
+cover: https://random.imagecdn.app/376/252
+top_img: https://random.imagecdn.app/1920/400
 date: 2022-06-21T15:10:29+08:00
 ---
 

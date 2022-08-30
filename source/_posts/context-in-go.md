@@ -1,6 +1,9 @@
 ---
 title: "golang中的context"
-tags: ["中文","入门","go","未完结"]
+tags: ["go","中文"]
+categories: ["golang","入门"]
+cover: https://random.imagecdn.app/376/252
+top_img: https://random.imagecdn.app/1920/400
 date: 2021-10-25T17:02:29+08:00
 ---
 # golang中的context

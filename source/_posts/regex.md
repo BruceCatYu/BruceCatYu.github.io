@@ -1,6 +1,9 @@
 ---
 title: "正则表达式快速上手"
-tags: ["中文","入门","未完结","正则","regex"]
+tags: ["中文","正则"]
+categories: ["regex","入门"]
+cover: https://random.imagecdn.app/376/252
+top_img: https://random.imagecdn.app/1920/400
 date: 2020-04-06T20:56:29+08:00
 ---
 
