@@ -1,7 +1,7 @@
 ---
 title: "go pprof"
 tags: ["中文","pprof"]
-categories: ["go","进阶"]
+categories: ["golang","进阶"]
 cover: https://random.imagecdn.app/376/252
 top_img: https://random.imagecdn.app/1920/400
 date: 2022-09-22T16:22:23+08:00
